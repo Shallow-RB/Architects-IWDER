@@ -1,0 +1,304 @@
+/* <!-- LETS GOOOOOOOOOOOOOOOOOOOOOOOO
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⠙⠉⠁⠄⣀⣴⠄⠭⢺⢫⣯⡽⢷⣯⡻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠋⠄⠄⠄⠄⠄⠄⠘⡇⣰⣄⠄⠈⢛⠻⣿⣿⣿⠌⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⠄⠄⠄⠄⠄⠄⠄⣀⣧⣟⣿⣶⠄⢾⣿⣿⣿⣿⣿⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠄⠄⠄⣤⣢⡄⠄⢩⣽⡇⢭⣯⡄⣌⣿⣿⣿⣿⣿⣿⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠹⣿⣂⠄⠄⠄⠄⠠⣀⠄⣿⣿⣿⣿⣿⣿⡏⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠛⠁⠉⡄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠉⠉⠉⠁⠊⠛⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠋⠁⠄⠄⠄⠄⢠⡄⠄⢆⠄⠄⠄⣀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣀⠄⠄⠄⠈⠄⠄⠄⠐⣿⣿⣿⣿⣿⡟⠞⣛⣗⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⠄⠄⠄⠄⠄⠄⠄⠘⠿⣿⣿⡗⠊⠁⣙⣿⣿⣿⣿⣯⡿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⣵⡆⠄⠄⠄⠐⠂⠄⠄⠄⣿⣿⣷⡀⠄⠤⣭⣭⣿⣯⡳⠻⣿⡿⠮⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠉⠏⠉⠒⠁⠄⣰⣤⣄⣤⠄⠄⠂⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⣎⠻⡿⣾⣟⠡⣏⢻⢿⣿⣿⣿⣿⣿⡿⣽⣿⣻⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⣺⠋⣼⡿⡀⠄⠸⣿⣿⣿⠛⣀⣠⢾⣿⣿⣿⣿⣿⣟⠛⢿⣿⣿⡇⣻⣷⣌⠨⣿⣵⡮⣟⡹⢾⣯⣿⣿⣿⣽⣿⣏⣿⣿⣿⣿⣿
+⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⡿⣋⣴⡞⠄⢀⣿⢡⣷⣄⠄⠛⠛⢁⣴⣤⠥⠤⠉⡽⠷⡶⠿⠿⣿⣶⡙⣿⢡⣿⣿⣿⣷⣤⡈⢿⠏⢼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣟⢿⣿⢿⣿⢟⣭⣿⡿⣋⣤⣿⣿⣻⣿⣿⣿⠄⠄⠄⠈⠅⠒⠒⠒⠚⠓⣛⣛⣯⡉⢍⣽⣷⠏⣸⣿⣿⡿⠉⣉⠁⠄⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⡟⣰⣿⢜⣷⣿⣿⣯⣴⣿⣿⣿⣛⣻⣛⣻⣿⣧⡀⠁⠄⢅⢈⢾⣿⣿⣿⣟⣻⡿⣷⣿⣿⡟⣰⣿⣿⣿⣿⡄⠉⠁⣠⣿⣿⡿⣿⣻⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣧⣿⡝⢟⢝⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣻⣿⣿⣿⣤⠄⠁⠈⢿⢿⣿⣿⣿⣿⣾⣿⣿⡟⠄⢾⣿⣿⣿⣿⡀⡀⢀⣻⣿⣿⡿⣾⣿⣿⣿⣿⣿⣿⣿⣻⣿⣿⣿
+⣿⣿⣿⣿⢾⣪⣄⣵⣭⡦⠟⣣⢿⣿⣿⣿⣧⣺⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠈⣉⣉⣭⣽⣿⣿⡿⠄⠄⢨⣿⣿⣿⣿⣿⣷⣶⣤⣌⠸⣿⣼⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿
+⣿⣿⣿⣿⣹⣿⣿⣿⣾⣿⣥⣿⣾⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⡿⡁⠄⠄⠄⠓⠿⠿⢿⠿⡿⠋⠄⠄⠄⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣤⡙⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⢟⣾⣿⣿⣿⣿⣭⣽⣶⣾⣟⣿⣾⣷⣿⣿⣿⣿⣿⣿⣵⣄⡀⠄⠄⠄⠄⠄⠄⠄⠄⢀⣠⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣜⢿⣿⡟⣿⣿⣾⣿⣿⣻
+⣿⣿⣿⢷⣴⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣶⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢺⣿⣿⢟⣿⣿⣿⣿⣟
+⣿⣿⣿⠄⠜⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⠿⠾⠿⣻⣽⣿⣿⡿
+⣿⣿⡿⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠒⢲⣿⣿⣿⣾
+⣿⣟⠳⣌⡀⣘⣛⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣳⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠠⠟⣼⣽⣿⣿⣿
+⣿⠏⠉⠪⢿⣻⠻⣿⡿⣵⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⡳⢽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠐⠹⠽⠽⣿⣿⣿
+⣿⠄⠄⠄⣢⡠⣫⣽⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⣿⣟⢳⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⢀⣤⣽⣿⣿⣿⣿
+⡏⠄⠄⠠⡝⣿⢶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣿⣿⡿⣿⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⣫⢧⠴⢚⠄⠩⠽⣿⣻⣿⣿
+⠄⠄⠢⣀⠙⡤⡤⣫⣿⣹⣯⠙⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣏⣿⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⣈⡰⠄⠄⠄⣤⣭⣿⣝⣿⣿ --> */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: black;
+}
+.zoom {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.zoom #layer0 {
+  position: relative;
+  width: auto;
+  height: 100vh;
+  filter: blur(1px);
+  background-position: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -2;
+}
+
+.topnav::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 1000px;
+  background: linear-gradient(360deg, transparent, rgb(0 0 0));
+  z-index: 0;
+}
+
+.zoom::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 400px;
+  z-index: 500;
+  background: linear-gradient(transparent, rgb(0 0 0));
+}
+.zoom #layer1 {
+  position: absolute;
+  left: 50%;
+  width: 100%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.zoom #layer2 {
+  position: absolute;
+  right: 0%;
+  bottom: 0;
+  width: 100%;
+  z-index: 9;
+}
+
+.zoom #text {
+  position: absolute;
+  left: 10%;
+  width: 80%;
+  margin: 0 auto;
+  transform: translateY(100%);
+  filter: invert();
+}
+
+.content {
+  text-align: center;
+  margin: 10% auto;
+  width: 40%;
+  color: rgb(255, 255, 255);
+  box-sizing: border-box;
+  font-family: "Neue Montreal";
+}
+
+.content h2 {
+  font-size: 3em;
+  font-weight: 300;
+  padding-bottom: 1%;
+  text-decoration-line: underline overline;
+  text-decoration-thickness: 0.01em;
+  text-underline-offset: 30%;
+  margin: 0;
+  font-family: "Playfair Display";
+  transition: 0.3s;
+}
+
+.content h2:hover {
+  animation: glitcheffect 2s steps(100) infinite alternate-reverse;
+}
+
+.content p {
+  font-size: 1.2em;
+  font-weight: 400;
+  margin-top: 5vh;
+  font-family: "Playfair Display";
+}
+
+/* .aboutAlbum{
+	width: 200px;
+	height: 200px;
+} */
+
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  margin-top: 15vh;
+  margin-bottom: 50vh;
+  background: linear-gradient(0deg, rgba(63, 63, 63, 0.295), transparent);
+}
+
+.box {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  transform-style: preserve-3d;
+  animation: animate 60s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    transform: perspective(1000px) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(360deg);
+  }
+}
+
+.box section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  transform: rotateY(calc(var(--i) * 90deg)) translateZ(300px);
+  -webkit-box-reflect: below 0px
+    linear-gradient(transparent, transparent, rgba(27, 27, 27, 0.16));
+}
+
+.box section img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+	transition: all .3s;
+}
+
+.box:hover {
+  animation-play-state: paused;
+}
+
+.box section img:hover{
+	transform: scale3d(1.1, 1.1, 1.0);
+	transition: all .3s;
+}
+
+.albumText1 {
+background-color: rgba(0, 0, 0, 0.8);
+  width: 60%;
+  font-size: 110%;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Neue Montreal";
+  transform: translateY(340%);
+  color: white;
+  -webkit-font-smoothing: antialiased;
+}
+
+.albumText2 {
+	background-color: rgba(0, 0, 0, 0.8);
+  width: 60%;
+  font-size: 110%;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Neue Montreal";
+  transform: translateY(500%);
+  color: white;
+  -webkit-font-smoothing: antialiased;
+}
+
+.albumText3 {
+	background-color: rgba(0, 0, 0, 0.8);
+  width: 60%;
+  font-size: 110%;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Neue Montreal";
+  transform: translateY(400%);
+  color: white;
+  -webkit-font-smoothing: antialiased;
+}
+
+.albumText4 {
+	background-color: rgba(0, 0, 0, 0.8);
+  width: 60%;
+  font-size: 110%;
+  position: relative;
+  margin: 0 auto;
+  text-align: center;
+  font-family: "Neue Montreal";
+  transform: translateY(335%);
+  color: white;
+  -webkit-font-smoothing: antialiased;
+}
+
+.box > section img:hover .albumText {
+  font-size: 300%;
+}
+
+@media (max-width: 1400px) {
+  .zoom > #text {
+    transform: translateY(150%);
+  }
+
+  .content {
+    width: 60%;
+  }
+}
+
+@media (max-width: 1100px) {
+  .zoom > #text {
+    transform: translateY(250%);
+  }
+}
+
+@media (max-width: 770px) {
+  .zoom > #text {
+    transform: translateY(400%);
+  }
+  .box {
+    width: 200px;
+    height: 200px;
+  }
+  .box section {
+    transform: rotateY(calc(var(--i) * 90deg)) translateZ(250px);
+  }
+  .albumText1 {
+    transform: translateY(145%);
+    width: 100%;
+  }
+  .albumText2 {
+    transform: translateY(200%);
+    width: 100%;
+  }
+
+  .albumText3 {
+    transform: translateY(165%);
+    width: 100%;
+  }
+
+  .albumText4 {
+    transform: translateY(125%);
+    width: 100%;
+  }
+}

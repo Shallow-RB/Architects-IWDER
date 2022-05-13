@@ -1,0 +1,590 @@
+/* <!-- LETS GOOOOOOOOOOOOOOOOOOOOOOOO
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⠙⠉⠁⠄⣀⣴⠄⠭⢺⢫⣯⡽⢷⣯⡻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠋⠄⠄⠄⠄⠄⠄⠘⡇⣰⣄⠄⠈⢛⠻⣿⣿⣿⠌⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⠄⠄⠄⠄⠄⠄⠄⣀⣧⣟⣿⣶⠄⢾⣿⣿⣿⣿⣿⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⠄⠄⠄⣤⣢⡄⠄⢩⣽⡇⢭⣯⡄⣌⣿⣿⣿⣿⣿⣿⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠹⣿⣂⠄⠄⠄⠄⠠⣀⠄⣿⣿⣿⣿⣿⣿⡏⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠛⠁⠉⡄⠄⠄⠄⠄⠄⠄⠄⠄⠄⠉⠉⠉⠁⠊⠛⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠋⠁⠄⠄⠄⠄⢠⡄⠄⢆⠄⠄⠄⣀⠄⠄⠄⠄⠄⠄⠄⠄⠄⠄⣠⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣀⠄⠄⠄⠈⠄⠄⠄⠐⣿⣿⣿⣿⣿⡟⠞⣛⣗⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⠄⠄⠄⠄⠄⠄⠄⠘⠿⣿⣿⡗⠊⠁⣙⣿⣿⣿⣿⣯⡿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⣵⡆⠄⠄⠄⠐⠂⠄⠄⠄⣿⣿⣷⡀⠄⠤⣭⣭⣿⣯⡳⠻⣿⡿⠮⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠉⠏⠉⠒⠁⠄⣰⣤⣄⣤⠄⠄⠂⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⣎⠻⡿⣾⣟⠡⣏⢻⢿⣿⣿⣿⣿⣿⡿⣽⣿⣻⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⣺⠋⣼⡿⡀⠄⠸⣿⣿⣿⠛⣀⣠⢾⣿⣿⣿⣿⣿⣟⠛⢿⣿⣿⡇⣻⣷⣌⠨⣿⣵⡮⣟⡹⢾⣯⣿⣿⣿⣽⣿⣏⣿⣿⣿⣿⣿
+⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⡿⣋⣴⡞⠄⢀⣿⢡⣷⣄⠄⠛⠛⢁⣴⣤⠥⠤⠉⡽⠷⡶⠿⠿⣿⣶⡙⣿⢡⣿⣿⣿⣷⣤⡈⢿⠏⢼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣟⢿⣿⢿⣿⢟⣭⣿⡿⣋⣤⣿⣿⣻⣿⣿⣿⠄⠄⠄⠈⠅⠒⠒⠒⠚⠓⣛⣛⣯⡉⢍⣽⣷⠏⣸⣿⣿⡿⠉⣉⠁⠄⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⡟⣰⣿⢜⣷⣿⣿⣯⣴⣿⣿⣿⣛⣻⣛⣻⣿⣧⡀⠁⠄⢅⢈⢾⣿⣿⣿⣟⣻⡿⣷⣿⣿⡟⣰⣿⣿⣿⣿⡄⠉⠁⣠⣿⣿⡿⣿⣻⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣧⣿⡝⢟⢝⣿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣻⣿⣿⣿⣤⠄⠁⠈⢿⢿⣿⣿⣿⣿⣾⣿⣿⡟⠄⢾⣿⣿⣿⣿⡀⡀⢀⣻⣿⣿⡿⣾⣿⣿⣿⣿⣿⣿⣿⣻⣿⣿⣿
+⣿⣿⣿⣿⢾⣪⣄⣵⣭⡦⠟⣣⢿⣿⣿⣿⣧⣺⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠈⣉⣉⣭⣽⣿⣿⡿⠄⠄⢨⣿⣿⣿⣿⣿⣷⣶⣤⣌⠸⣿⣼⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿
+⣿⣿⣿⣿⣹⣿⣿⣿⣾⣿⣥⣿⣾⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⡿⡁⠄⠄⠄⠓⠿⠿⢿⠿⡿⠋⠄⠄⠄⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣤⡙⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⢟⣾⣿⣿⣿⣿⣭⣽⣶⣾⣟⣿⣾⣷⣿⣿⣿⣿⣿⣿⣵⣄⡀⠄⠄⠄⠄⠄⠄⠄⠄⢀⣠⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣜⢿⣿⡟⣿⣿⣾⣿⣿⣻
+⣿⣿⣿⢷⣴⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣶⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢺⣿⣿⢟⣿⣿⣿⣿⣟
+⣿⣿⣿⠄⠜⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⠿⠾⠿⣻⣽⣿⣿⡿
+⣿⣿⡿⠄⠄⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠄⠄⠒⢲⣿⣿⣿⣾
+⣿⣟⠳⣌⡀⣘⣛⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⣿⣿⣿⣳⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠠⠟⣼⣽⣿⣿⣿
+⣿⠏⠉⠪⢿⣻⠻⣿⡿⣵⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⡳⢽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠐⠹⠽⠽⣿⣿⣿
+⣿⠄⠄⠄⣢⡠⣫⣽⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣿⣿⣿⣟⢳⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⢀⣤⣽⣿⣿⣿⣿
+⡏⠄⠄⠠⡝⣿⢶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣿⣿⡿⣿⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⣫⢧⠴⢚⠄⠩⠽⣿⣻⣿⣿
+⠄⠄⠢⣀⠙⡤⡤⣫⣿⣹⣯⠙⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣏⣿⣻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃⣈⡰⠄⠄⠄⣤⣭⣿⣝⣿⣿ --> */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.noscroll {
+  position: fixed;
+  inline-size: -webkit-fill-available;
+}
+
+* {
+  text-decoration: none;
+  list-style: none;
+  font-family: "Neue Montreal";
+}
+
+.topnav {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.404);
+  height: 10%;
+  position: static;
+  display: flex;
+  z-index: 1;
+  /* backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px); */
+}
+
+.topnav #brand {
+  display: inline;
+  font-size: 200%;
+  font-weight: bold;
+  line-height: 80px;
+  margin-left: 5vw;
+  z-index: 1;
+}
+
+.topnav #brand a {
+  color: #fff;
+  font-family: "Neue Montreal";
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.topnav #menu {
+  position: absolute;
+  text-align: center;
+  font-size: 150%;
+  line-height: 80px;
+  width: 100%;
+}
+
+.topnav #menu li {
+  text-indent: 1rem;
+  display: inline-block;
+  padding: 0px 30px;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease-out 0s;
+  text-align: center;
+  margin: 0px auto;
+  z-index: 1;
+}
+
+.topnav #menu li a {
+  color: #fff;
+  font-family: "Neue Montreal";
+  font-weight: 200;
+  text-align: center;
+  font-size: 115%;
+  letter-spacing: 1rem;
+  z-index: 1;
+}
+
+.topnav #menu li:hover {
+  animation: glitcheffect 2s steps(100) infinite alternate-reverse;
+}
+
+#toggle {
+  position: relative;
+  margin: auto;
+  z-index: 999;
+  width: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10%);
+}
+
+#toggle .line {
+  height: 3px;
+  background: #fff;
+  transition: all 0.3s ease-out;
+  backface-visibility: hidden;
+  margin: 5px auto;
+}
+
+#toggle.on #one {
+  transform: rotate(45deg) translateX(4px) translateY(7.5px);
+}
+
+#toggle.on #two {
+  opacity: 0;
+}
+
+#toggle.on #three {
+  transform: rotate(-45deg) translateX(4px) translateY(-7.5px);
+}
+
+#resize {
+  z-index: 998;
+  top: 0px;
+  position: absolute;
+  background: #000;
+  width: 100vw;
+  height: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 1s ease-out;
+  display: table;
+}
+
+#resize #menu2 {
+  margin-top: 20vh;
+}
+
+#resize #menu2 li {
+  width: 80%;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  padding: 5vh 0;
+  font-size: 50px;
+  min-height: 50px;
+  font-weight: normal;
+  letter-spacing: 3vw;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+#resize > li:nth-child(1) {
+  margin-top: 10vh;
+}
+
+#resize > li:nth-child(2),
+#resize > li:nth-child(3),
+#resize > li:nth-child(4) {
+  margin-top: 10vh;
+}
+
+#resize #menu2 li a {
+  color: #fff;
+  font-size: 120%;
+}
+
+#resize #menu2 li:hover {
+  animation: glitcheffect 2s steps(100) infinite alternate-reverse;
+}
+
+#resize.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width: 1200px) {
+  .topnav #brand {
+    margin: 0 auto;
+    margin-left: auto;
+    font-size: 250%;
+  }
+  #toggle {
+    visibility: visible;
+    opacity: 1;
+  }
+  #menu a {
+    font-family: "Neue Montreal";
+    font-weight: 200;
+    font-size: 80%;
+  }
+  .topnav #menu {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) {
+  #resize {
+    visibility: hidden !important;
+  }
+}
+
+header > .topnav > ul > li:before,
+header > .topnav > ul > li:after {
+  content: "";
+  position: absolute;
+  transition: inherit;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  height: 0;
+  width: 100%;
+  border: 1px solid white;
+  border-top: 0;
+  border-bottom: 0;
+}
+
+header > .topnav > ul > li:hover {
+  color: rgb(51, 51, 51);
+  transition-delay: 0.2s;
+}
+
+header > .topnav > ul > li:hover:before {
+  transition-delay: 0s;
+  height: 100%;
+}
+
+header > .topnav > ul > li:hover:after {
+  background: rgba(129, 129, 129, 0.185);
+  transition-delay: 0.2s;
+  height: 100%;
+}
+
+@media (max-width: 770px) {
+  #resize #menu2 li a {
+    font-size: 80%;
+  }
+  .topnav #brand a {
+    font-size: 70%;
+  }
+}
+
+#brand {
+  animation: glitch 3s alternate infinite;
+}
+
+#brand:before {
+  animation: glitchTop 3s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+#brand:after {
+  animation: glitchBottom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+#brand:before,
+#brand:after {
+  content: attr(title);
+}
+
+#brand:hover {
+  animation: glitcheffect 2s steps(100) infinite alternate-reverse;
+}
+
+footer {
+  position: relative;
+  width: 100%;
+  height: auto;
+  background-color: rgba(129, 129, 129, 0.185);
+  z-index: 3;
+  padding-top: 24px;
+  border-top: 1px solid rgb(114, 114, 114);
+  font-family: "play";
+}
+
+footer p {
+  text-align: center;
+  padding: 5px 20px;
+  color: #d0dbe5;
+  font-size: 11px;
+}
+
+footer > section {
+  margin: auto;
+  max-width: 80%;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+footer > section > .footernav {
+  margin: 30px auto;
+}
+
+footer > section > .footernav > ul {
+  display: flex;
+  flex-direction: column;
+}
+
+footer > section > .footernav li {
+  margin: 5px auto;
+}
+
+footer > section > .footernav li > a {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+	font-size: 130%;
+}
+
+footer > section > section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  flex-wrap: wrap;
+  color: white;
+  text-decoration: none;
+}
+
+footer > section > section > a img {
+  width: auto;
+  height: 40px;
+  transition: transform 0.2s cubic-bezier(0.8, 0.18, 0.22, 0.96);
+  margin: 0 5px;
+  filter: invert();
+}
+
+/* footer > section > section > p {
+	color: #b7b7b7;
+	font-size: 12px;
+} */
+
+.icons > a {
+  transition: 0.3s;
+}
+
+.icons > a:hover {
+  transform: scale(1.2);
+}
+
+.footerlogo:hover {
+  transform: scale(1.6);
+}
+
+.footerlogo {
+  filter: invert();
+  transition: 0.3s;
+	display: block;
+	transform: scale(1.5);
+  width: 80%;
+  max-width: 200px;
+  height: auto;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 770px) {
+  footer > section {
+    grid-template-columns: 1fr;
+  }
+  .footernav {
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  footer > section > section > a img {
+    height: 30px;
+  }
+  .footerlogo {
+    width: 50%;
+  }
+}
+
+@keyframes glitch {
+  2%,
+  64% {
+    transform: translate(2px, 0) skew(-2deg);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 0) skew(2deg);
+  }
+  62% {
+    transform: translate(0, 0) skew(180deg);
+  }
+}
+
+@keyframes glitchTop {
+  2%,
+  64% {
+    transform: translate(2px, -2px);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 2px);
+  }
+  62% {
+    transform: translate(13px, -1px) skew(-10deg);
+  }
+}
+
+@keyframes glitchBottom {
+  2%,
+  64% {
+    transform: translate(-2px, 0);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 0);
+  }
+  62% {
+    transform: translate(-22px, 5px) skew(20deg);
+  }
+}
+
+@keyframes glitcheffect {
+  0% {
+    text-shadow: 1px 0 0 red, -10px 0 0 blue;
+  }
+  4% {
+    text-shadow: 10px 0 0 red, -1px 0 0 blue;
+  }
+  5% {
+    text-shadow: -1px 0 0 red, 10px 0 0 blue;
+  }
+  10% {
+    text-shadow: -1px 0 0 red, 1px 0 0 blue;
+  }
+  11% {
+    text-shadow: 0.5px 0 0 red, -0.5px 0 0 lime;
+  }
+  15% {
+    text-shadow: 0.5px 0 0 red, -0.5px 0 0 lime;
+  }
+  16% {
+    text-shadow: -1px 0 0 red, -10px 0 0 lime;
+  }
+  20% {
+    text-shadow: -1px 0 -10px red, 1px 0 0 lime;
+  }
+  21% {
+    text-shadow: 0.7px 0 0 blue, -0.7px 0 0 lime;
+  }
+  30% {
+    text-shadow: 0.7px 0 0 blue, -0.7px 0 0 lime;
+  }
+  31% {
+    text-shadow: -15px 0 0 blue, 1px 0 0 lime;
+  }
+  40% {
+    text-shadow: -1px 0 0 blue, 1px 0 0 lime;
+  }
+  41% {
+    text-shadow: 20px 0 0 blue, -20px 0 0 lime;
+  }
+  42% {
+    text-shadow: 0 0 0 blue, 0 0 0 lime;
+  }
+  43% {
+    text-shadow: 0.5px 0 0 red, -0.5px 0 0 lime;
+  }
+  46% {
+    text-shadow: 0.5px 0 0 red, -0.5px 0 0 lime;
+  }
+  47% {
+    text-shadow: -1px 0 0 red, 1px 0 0 lime;
+  }
+  50% {
+    text-shadow: -1px 0 0 red, 1px 0 0 lime;
+  }
+  51% {
+    text-shadow: 10px 0 0 red, -1px 0 0 blue;
+  }
+  55% {
+    text-shadow: 1px 0 0 red, -10px 0 0 blue;
+  }
+  56% {
+    text-shadow: -1px 0 0 red, 1px 0 0 blue;
+  }
+  60% {
+    text-shadow: -1px 0 0 red, 1px 0 0 blue;
+  }
+  61% {
+    text-shadow: 10px 0 0 red, -10px 0 0 lime;
+  }
+  62% {
+    text-shadow: 0 0 0 red, 0 0 0 lime;
+  }
+  63% {
+    text-shadow: 0.5px 0 0 red, -0.5px 0 0 blue;
+  }
+  66% {
+    text-shadow: 0.5px 0 0 red, -0.5px 0 0 blue;
+  }
+  67% {
+    text-shadow: -10px 0 0 red, 1px 0 0 blue;
+  }
+  70% {
+    text-shadow: -1px 0 0 red, 10px 0 -10px blue;
+  }
+  71% {
+    text-shadow: 15px 0 0 red, -15px 0 0 blue;
+  }
+  72% {
+    text-shadow: 0 0 0 red, 0 0 0 blue;
+  }
+  73% {
+    text-shadow: 1px 0 0 red, -1px 0 0 blue;
+  }
+  76% {
+    text-shadow: 1px 0 0 red, -1px 0 0 blue;
+  }
+  77% {
+    text-shadow: -1px 0 0 red, 1px 0 0 blue;
+  }
+  80% {
+    text-shadow: -15px 0 0 red, 1px 0 0 blue;
+  }
+  81% {
+    text-shadow: 0.5px 0 0 red, -0.5px 0 0 lime;
+  }
+  85% {
+    text-shadow: 0.5px 0 0 red, -0.5px 0 0 lime;
+  }
+  86% {
+    text-shadow: -1px 0 -10px red, 1px 0 0 lime;
+  }
+  90% {
+    text-shadow: -1px 0 0 red, 1px 0 0 lime;
+  }
+  91% {
+    text-shadow: 25px 0 0 lime, -25px 0 0 blue;
+  }
+  92% {
+    text-shadow: 0 0 0 lime, 0 0 0 blue;
+  }
+  92% {
+    text-shadow: 0.7px 0 0 blue, -0.7px 0 0 lime;
+  }
+  95% {
+    text-shadow: 0.7px 0 0 blue, -0.7px 0 0 lime;
+  }
+  96% {
+    text-shadow: -15px 0 0 blue, 1px 0 0 lime;
+  }
+  99% {
+    text-shadow: -1px 0 0 blue, 1px 0 0 lime;
+  }
+  100% {
+    text-shadow: -1px 0 0 blue, 1px 0 -10px lime;
+  }
+}
